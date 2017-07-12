@@ -1,0 +1,13 @@
+.state("login", {
+                    url: "/login",
+                    templateUrl: 'app/core/views/loginView.html',
+                    controller: 'loginCtrl',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'lazy_iCheck',
+                                'app/core/controllers/loginController.js'
+                            ]);
+                        }]
+                    }
+                })
